@@ -1,0 +1,409 @@
+:root {
+  --primary: #6d28d9;
+  --bg: #f5f3ff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+  background-size: 30px 30px; 
+  overflow-x: hidden;
+}
+
+/* --- ANIMATION KEYFRAMES --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 80px;
+  align-items: center;
+  position: relative; 
+  z-index: 1000;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.logo { font-weight: bold; font-size: 20px; color: var(--primary); }
+.nav-links span { margin: 0 15px; color: #4b5563; cursor: pointer; }
+
+.nav-buttons {
+  display: flex;
+  gap: 15px; 
+  align-items: center;
+}
+
+/* --- SIGNUP & LOGIN PAGE LAYOUT --- */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(15px);
+  padding: 60px 40px 40px 40px; /* Increased top padding for the back button */
+  border-radius: 30px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  z-index: 10;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* --- NEW BEAUTIFUL BACK BUTTON --- */
+.back-btn-styled {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.back-btn-styled svg {
+  transition: transform 0.3s ease;
+}
+
+.back-btn-styled:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 10px 15px -3px rgba(109, 40, 217, 0.3);
+}
+
+.back-btn-styled:hover svg {
+  transform: translateX(-3px); /* Bouncy move to the left on hover */
+}
+
+/* --- FORM STYLES --- */
+.signup-card h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.signup-card p {
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(109, 40, 217, 0.1);
+}
+
+.footer-text {
+  margin-top: 25px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* --- BUTTONS --- */
+.btn-signup {
+  background: transparent;
+  color: #6d28d9;
+  border: 1px solid #6d28d9;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-signup:hover {
+  background: #f5f3ff;
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  background: #1f2937;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --- HERO SECTION --- */
+.container {
+  display: flex;
+  padding: 60px 80px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-text { flex: 1; max-width: 550px; }
+
+.hero-text h1 { 
+  font-size: 3.5rem; 
+  line-height: 1.1; 
+  margin-bottom: 20px; 
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards 0.3s;
+}
+
+.purple-text { color: var(--primary); }
+
+.hero-text p { 
+  color: #6b7280; 
+  font-size: 1.1rem; 
+  margin-bottom: 30px; 
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards 0.5s;
+}
+
+.hero-btns {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards 0.7s;
+}
+
+.btn-dark-lg { 
+  background: black; 
+  color: white; 
+  border: none; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  padding: 15px 35px; 
+  font-weight: bold; 
+  transition: transform 0.2s;
+}
+
+.btn-dark-lg:hover { transform: scale(1.05); }
+
+.btn-outline-lg { 
+  background: white; 
+  border: 1px solid #d1d5db; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  padding: 15px 35px; 
+  margin-left: 15px; 
+}
+/* --- CHAT PAGE LAYOUT --- */
+.chat-layout {
+  display: flex;
+  height: 100vh;
+  background-color: var(--bg);
+  background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.chat-sidebar {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+}
+
+.new-chat-btn {
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin: 25px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.new-chat-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.history-label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.history-item {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+.history-item:hover {
+  background: rgba(109, 40, 217, 0.05);
+  color: var(--primary);
+}
+
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.chat-header {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+  background: white;
+}
+
+.status-badge {
+  background: #dcfce7;
+  color: #166534;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.chat-container-fixed {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 20px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.logout-link {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* --- CHATBOT VISUAL --- */
+.hero-visual {
+  opacity: 0;
+  animation: fadeInRight 1s ease forwards 1s, float 6s ease-in-out infinite 2s;
+}
+
+/* --- BACKGROUND ORBS --- */
+.orb { 
+  position: absolute; 
+  border-radius: 50%; 
+  filter: blur(80px); 
+  z-index: -1; 
+  opacity: 0; 
+  pointer-events: none;
+  transition: opacity 2s ease;
+}
+
+.orb-1 { 
+  width: 400px; height: 400px; background: #ddd6fe; top: -100px; right: -100px; 
+  animation: fadeInUp 2s ease forwards;
+}
+
+.orb-2 { 
+  width: 300px; height: 300px; background: #ffedd5; bottom: -50px; left: 20%; 
+  animation: fadeInUp 2s ease forwards 0.5s;
+}
