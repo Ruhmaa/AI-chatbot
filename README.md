@@ -44,7 +44,8 @@ Authentication & Database: Firebase
 <img width="1440" height="900" alt="Screenshot 2026-02-20 at 12 01 46 PM" src="https://github.com/user-attachments/assets/63b25789-0230-4d80-a97b-33e7f6ad340f" />
 
 <img width="1440" height="900" alt="Screenshot 2026-02-20 at 11 59 58 AM" src="https://github.com/user-attachments/assets/a97ac69e-f761-4e01-96f0-74b32506cb58" />
-<img width="1440" height="900" alt="Screenshot 2026-02-20 at 11 59 58 AM" src="https://github.com/user-attachments/assets/5ef464c4-40df-4a7a-8ff8-02bb4e376ece" />
+<img width="1440" height="900" alt="Screenshot 2026-02-20 at 12 01 28 PM" src="https://github.com/user-attachments/assets/d9510d3c-a94e-4734-be7b-6e7bc8fbdfae" />
+
 
 
 
